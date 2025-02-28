@@ -1,0 +1,17 @@
+{
+  "platforms": [
+    "apple",
+    "android",
+    "web"
+  ],
+  "apple": {
+    "modules": [
+      "AirplayModule"
+    ]
+  },
+  "android": {
+    "modules": [
+      "expo.modules.airplay.AirplayModule"
+    ]
+  }
+}
