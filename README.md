@@ -1,50 +1,82 @@
-# Welcome to your Expo app 👋
+# Application React Native avec Vision Camera 📸
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+Cette application utilise React Native avec la bibliothèque `react-native-vision-camera` pour accéder aux fonctionnalités avancées de la caméra. En raison des besoins spécifiques de cette bibliothèque, nous avons quitté le workflow Expo classique pour utiliser un prebuild.
 
-## Get started
+## Prérequis 📋
 
-1. Install dependencies
+- Node.js (version 14 ou supérieure)
+- Xcode (pour iOS)
+- Android Studio (pour Android)
+- CocoaPods (pour iOS)
 
-   ```bash
-   npm install
-   ```
+## Configuration initiale 🚀
 
-2. Start the app
-
-   ```bash
-    npx expo start
-   ```
-
-In the output, you'll find options to open the app in a
-
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
-
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
-
-## Get a fresh project
-
-When you're ready, run:
+1. Installer les dépendances :
 
 ```bash
-npm run reset-project
+npm install
 ```
 
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
+2. Installer les pods pour iOS :
 
-## Learn more
+```bash
+cd ios && pod install && cd ..
+```
 
-To learn more about developing your project with Expo, look at the following resources:
+## Lancement de l'application 🎯
 
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
+### iOS
 
-## Join the community
+```bash
+npm run ios
+```
 
-Join our community of developers creating universal apps.
+### Android
 
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+```bash
+npm run android
+```
+
+## À propos du Prebuild Expo 🔄
+
+Cette application a été initialement créée avec Expo mais a été "prebuilt" pour supporter react-native-vision-camera. Le prebuild était nécessaire car :
+
+- `react-native-vision-camera` nécessite un accès natif aux API de la caméra
+- Les fonctionnalités avancées de la caméra ne sont pas disponibles dans Expo Go
+- Nous avons besoin d'un contrôle plus précis sur les configurations natives
+
+## Structure du Projet 📁
+
+- `/app` - Contient les composants et la logique de l'application
+- `/ios` - Configuration native iOS
+- `/android` - Configuration native Android
+
+## Permissions 🔐
+
+L'application nécessite les permissions suivantes :
+
+- Accès à la caméra
+- Accès au microphone
+
+Ces permissions sont gérées automatiquement dans le code, mais doivent être acceptées par l'utilisateur lors du premier lancement.
+
+Elles peuvent être gérées dans le fichier `app.json` !! Votre tête de projet !!
+
+## Développement 💻
+
+Pour modifier l'application, vous pouvez éditer les fichiers dans le dossier `/app`. Les principaux fichiers sont :
+
+- `app/(tabs)/camera.tsx` - Composant principal de la caméra
+- Autres composants et configurations...
+
+## Notes importantes ⚠️
+
+- Cette application ne peut plus être exécutée dans Expo Go !!
+- Toutes les modifications natives nécessitent une recompilation de l'application !!
+- Assurez-vous d'avoir les dernières versions des SDK iOS et Android installées !!
+
+## Support et Ressources 📚
+
+- [Documentation React Native Vision Camera](https://mrousavy.com/react-native-vision-camera/)
+- [Documentation React Native](https://reactnative.dev/)
+- [Guide de développement natif avec Expo](https://docs.expo.dev/workflow/customizing/)
